@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/dash_client.css">   
+    
+</head>
+<body>
+  <nav class="nav-head">
+      <img src="https://www.designmantic.com/logo-images/3563.png?company=Company+Name&slogan=&verify=1" alt="logo" class="logo">
+      <h1>E-Portal</h1>
+            <div class="user">
+              <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="../images/icons8-user-24.png" alt="user" >
+              </button>
+            
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item" href="#">Profile</a></li>
+              <li><a class="dropdown-item" href="#">Options</a></li>
+              <li><button class="dropdown-item" onclick="signOut()">Sign Out</button></li>
+            </ul>
+          </div>
+        </nav>
+  <section class="main-container">
+    <aside class="sidebar">
+      <div class="dash">
+       <h6>Dashboard</h6>
+      </div>
+      <div>
+      <button class="btn22 dash-btn">Case Status</button>
+      <button class="btn33 dash-btn">Video Conference</button>
+      <button class="btn33 dash-btn">Find Lawyer</button>
+      </div>
+   </aside>
+       <nav class="navbar navbar-expand-lg navbar-light ">
+           <ul>
+               <a href="/"><li>Home</li></a>
+               <a href="/service"><li>Services</li></a>
+               <a href="/about"><li>About</li></a>
+               <a href="/contactUs"><li>Contact Us</li></a>
+               <div class="dropdown">
+                   <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                     Courts
+                   </button>
+                   <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                     <li><a class="dropdown-item" href="https://main.sci.gov.in/">Supreme Court</a></li>
+                     <li><a class="dropdown-item" href="https://mphc.gov.in/">High Court</a></li>
+                     <li><a class="dropdown-item" href="https://district.mphc.gov.in/">District Court</a></li>
+                   </ul>
+                 </div>
+               </ul>
+         </nav> 
+     <section class="main" id="main_place">
+       <div class="Dcards">
+            <div id="caseStatus" class="box22 hide" >
+               <h1>case status will appear</h1>     
+            </div>
+            
+            <div id="onlineHearing" class="box33 hide" >
+              <h1>video conference</h1>    
+            </div>
+       </div>
+     </section>
+  </section> 
+  <footer class="dash-footer">
+      <div class="links">
+        <div class="Qlinks">
+          <h4>Quick links</h4>
+          <a href="#">Video Tutorials</a><br>
+          <a href="/contactUs">Contact Us</a><br>
+          <a href="/about">About Us</a><br>
+          <a href="https://main.sci.gov.in/">e-committee</a><br>
+          <a href="/terms&condition">Terms and Condition</a><br>
+          <a href="/site_map">Site Map</a><br>
+          <a href="#">Screen Reader Access</a>
+        </div>
+        <div class="partners">
+          <a href="https://digitalindia.gov.in/" target="_blank"><img src="../images/Digital-India-Color.svg" alt="Digital India"></a>
+          <a href="https://doj.gov.in/" target="_blank"><img src="../images/Ministry_of_Law_and_Justice.svg.png" alt="Department of Justice"></a>
+          <a href="https://main.sci.gov.in/e-committee" target="_blank"><img src="../images/Emblem_of_the_Supreme_Court_of_India.svg.png" alt="e-committee"></a>
+          <a href="https://www.nic.in/" target="_blank"><img src="../images/NIC_logo.svg.png" alt="NIC"></a>
+          <a href="https://www.indiacode.nic.in/" target="_blank"><img src="../images/India-code-logo.png" alt="India code"></a>
+        </div>
+      </div>  
+      <div class="copyright">
+        <span>Version : 1.0 © e-Court Portal, for online hearing conference. All Rights Reserved.</span>
+      </div>          
+    </footer> 
+  </body> 
+    <script>
+      var btn11 = document.querySelector('.btn11');
+      var btn22 = document.querySelector('.btn22');
+      var btn33 = document.querySelector('.btn33');
+      var box11 = document.querySelector('.box11');
+      var box22 = document.querySelector('.box22');
+      var box33 = document.querySelector('.box33');
+     
+      btn22.addEventListener('click', function () {
+        box22.classList.add('show');
+        // box11.classList.remove('show');
+        box33.classList.remove('show');
+      });
+      btn33.addEventListener('click', function () {
+        box33.classList.add('show');
+        // box11.classList.remove('show');
+        box22.classList.remove('show');
+      });
+      
+      
+      </script> 
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+      <script>
+        function signOut() {
+          // Function to delete the authentication cookie
+          document.cookie = "client_id=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+          // Redirect to a sign-out or home page
+          window.location.href = "../index.html"; // Replace with your sign-out or home page URL
+        }
+      </script>
+
+      
+
+
+</html>
