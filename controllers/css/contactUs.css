@@ -116,7 +116,8 @@
 
 /* info */
 .info{
-    background: #873829;
+    /* background: #873829; */
+    background: rgb(85, 42, 1)
 }
 .info h3{
     color: #fff;
@@ -130,7 +131,7 @@
     min-width: 40px;
     height: 40px;
     color: #fff;
-    background:#3D0C02 ;
+    background:rgba(85,42, 1,0.253);
     display: flex;
     justify-content: center;
     align-items: center;

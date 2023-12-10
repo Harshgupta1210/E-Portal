@@ -27,6 +27,22 @@ module.exports.document = (req,res)=>{
   const filePath = path.join(__dirname, 'lawyer', 'document.html'); // Path to your index.html file
     res.sendFile(filePath);
 }
+module.exports.meeting = (req,res)=>{
+  const filepath = path.join(__dirname,'Video Conference','room.html');
+  res.sendFile(filepath);
+}
+module.exports.lobby = (req,res)=>{
+  const filePath = path.join(__dirname,'Video Conference','lobby.html'); // Path to your index.html file
+  res.sendFile(filePath);
+}
+module.exports.email = (req,res)=>{
+  const filePath = path.join(__dirname,'lawyer','forget_password.html');
+  res.sendFile(filePath)
+}
+module.exports.new_password = (req,res)=>{
+  const filePath = path.join(__dirname,'lawyer','new_password.html');
+  res.sendFile(filePath)
+}
 
 module.exports.numbers = (req,res)=>{
   const dataToSave =  {
@@ -171,7 +187,8 @@ module.exports.Dashboard_lawyer = (req,res)=>{
   });
 }
 module.exports.face = (req,res)=>{
-  const pythonScript = '/E-portal/E-portal/FaceId/face.py';
+  // const pythonScript = '/E-Court/E-portal/FaceId/face.py';
+  const pythonScript = path.join(__dirname, 'FaceId', 'face.py');
   exec(`python ${pythonScript}`, (err, stdout, stderr) => {
     if (err) {
       console.error(`Error executing Python script: ${err}`);
@@ -180,5 +197,18 @@ module.exports.face = (req,res)=>{
     }
     console.log(`Python script output: ${stdout}`);
     return res.redirect('/lawyer/logging')
+  });
+}
+module.exports.verify_img = (req,res)=>{
+  // const pythonScript = '/E-Court/E-portal/FaceId/verify_lawyer.py';
+  const pythonScript = path.join(__dirname, 'FaceId', 'verify_lawyer.py');
+  exec(`python ${pythonScript}`, (err, stdout, stderr) => {
+    if (err) {
+      console.error(`Error executing Python script: ${err}`);
+      res.status(500).send('Error executing Python script');
+      return;
+    }
+    console.log(`Python script output: ${stdout}`);
+    return res.redirect('/lawyer/meeting')
   });
 }

@@ -11,7 +11,7 @@
 </head>
 <body>
   <nav class="nav-head">
-      <img src="https://www.designmantic.com/logo-images/3563.png?company=Company+Name&slogan=&verify=1" alt="logo" class="logo">
+      <img src="../images/Logopng-02.png" alt="logo" class="logo">
       <h1>E-Portal</h1>
             <div class="user">
               <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -30,14 +30,15 @@
       <div class="dash">
        <h6>Dashboard</h6>
       </div>
-      <div>
+      <div class="dash-opt">
+      <button class="btn11 dash-btn">Profile</button>
       <button class="btn22 dash-btn">Case Status</button>
       <button class="btn33 dash-btn">Video Conference</button>
-      <button class="btn33 dash-btn">Find Lawyer</button>
+      <button class="btn44 dash-btn">Find Lawyer</button>
       </div>
    </aside>
-       <nav class="navbar navbar-expand-lg navbar-light ">
-           <ul>
+       <nav class="navbar navbar-expand-lg navbar-light "  style="height: 70px;">
+           <!-- <ul>
                <a href="/"><li>Home</li></a>
                <a href="/service"><li>Services</li></a>
                <a href="/about"><li>About</li></a>
@@ -52,16 +53,250 @@
                      <li><a class="dropdown-item" href="https://district.mphc.gov.in/">District Court</a></li>
                    </ul>
                  </div>
-               </ul>
+               </ul> -->
          </nav> 
      <section class="main" id="main_place">
        <div class="Dcards">
+             
+        <div id="Profile" class="box11 hide" >
+          <div class="container-pro">
+            <div class="userImg">
+                <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png" alt="user">
+            </div>
+            <div class="details">
+            <div class="name">
+                <h2>Gaurav Singh</h2>
+            </div>
+            <p class="record">+91 6268598733</p><br>
+            <p class="record">gaurav07singh10@gmail.com</p><br>
+            <p class="record">State - Madhya Pradesh</p><br>
+            <p class="record">District - Bhopal</p><br>
+            <p class="record">Bar no. - MP/1234/2003</p><br>
+            <p class="record"></p><br>
+        </div>
+    </div>
+        </div>          
+
             <div id="caseStatus" class="box22 hide" >
-               <h1>case status will appear</h1>     
+              <div class="container">
+                <div class="wrapper">
+                    <form action="/lawyer/lawyer_login" method="post">
+                        <h1>Case Type</h1>
+                        <div class="input-box">
+                            <input type="text" name="username" placeholder="Case Type" required>
+        
+                        </div>
+        
+                        <div class="input-box">
+                            <input type="number" placeholder="Number" required>
+                        </div>
+        
+                        <a href="/lawyer/dashboard" class="btn">Show</a>
+                    </form>
+                </div>
+            
+                    <div class="wrapper CNR">
+                        <form action="/client/client_login" method="post">
+                            <h1>Search by CNR number</h1>
+            
+                            <div class="input-box">
+                                <input type="text" name="username" placeholder="Enter 16 digit CNR number" required>
+                            </div>
+                        <a href="/client/dashboard" class="btn">Show</a>
+                    </form>
+                </div>
+            </div>    
             </div>
             
             <div id="onlineHearing" class="box33 hide" >
-              <h1>video conference</h1>    
+              <span>To join your online video conferencing hearing click the button below</span><br><br>
+              <span>You will require to provide your <br> 1.Name <br>2.Room Password <br> 3.Your FaceID</span><br><br>
+              <a href="/client/verify_img"><button class="btn join-btn">Join Hearing</button></a>   
+            </div>
+
+            <div id="Find-Laywer" class="box44 hide" >
+              <div class="lawyer-con">
+                <div class="lawlist">
+                    <div class="adv"><img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png" alt=""></div>
+                    <div class="lawyer-info">
+                        <strong><p>Mann Mittal</p></strong>
+                        <p class="small">Civil & property</p>
+                        <p class="small">mann123@gmail.com</p>
+                    </div>
+                    <div class="rating">
+                        <img src="https://cdn.pixabay.com/photo/2016/03/31/17/42/gradient-1293852_640.png" alt="">
+                        <img src="https://cdn.pixabay.com/photo/2016/03/31/17/42/gradient-1293852_640.png" alt="">
+                        <img src="https://cdn.pixabay.com/photo/2016/03/31/17/42/gradient-1293852_640.png" alt="">
+                        <img src="https://cdn.pixabay.com/photo/2016/03/31/17/42/gradient-1293852_640.png" alt="">
+                        <img src="https://cdn.pixabay.com/photo/2016/08/17/18/05/pentagram-1601162_640.png" alt="">
+                    </div>
+                </div>
+                <div class="lawlist">
+                    <div class="adv"><img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png" alt=""></div>
+                    <div class="lawyer-info">
+                        <strong><p>Suhani Asawara</p></strong>
+                        <p class="small">Criminal</p>
+                        <p class="small">suhani123@gmail.com</p>
+                    </div>
+                    <div class="rating">
+                        <img src="https://cdn.pixabay.com/photo/2016/03/31/17/42/gradient-1293852_640.png" alt="">
+                        <img src="https://cdn.pixabay.com/photo/2016/03/31/17/42/gradient-1293852_640.png" alt="">
+                        <img src="https://cdn.pixabay.com/photo/2016/03/31/17/42/gradient-1293852_640.png" alt="">
+                        <img src="https://cdn.pixabay.com/photo/2016/08/17/18/05/pentagram-1601162_640.png" alt="">
+                        <img src="https://cdn.pixabay.com/photo/2016/08/17/18/05/pentagram-1601162_640.png" alt="">
+                    </div>
+                </div>
+                <div class="lawlist">
+                    <div class="adv"><img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png" alt=""></div>
+                    <div class="lawyer-info">
+                        <strong><p>Hitanshi Lalwani</p></strong>
+                        <p class="small">Marital</p>
+                        <p class="small">hitanshi123@gmail.com</p>
+                    </div>
+                    <div class="rating">
+                        <img src="https://cdn.pixabay.com/photo/2016/03/31/17/42/gradient-1293852_640.png" alt="">
+                        <img src="https://cdn.pixabay.com/photo/2016/03/31/17/42/gradient-1293852_640.png" alt="">
+                        <img src="https://cdn.pixabay.com/photo/2016/03/31/17/42/gradient-1293852_640.png" alt="">
+                        <img src="https://cdn.pixabay.com/photo/2016/03/31/17/42/gradient-1293852_640.png" alt="">
+                        <img src="https://cdn.pixabay.com/photo/2016/08/17/18/05/pentagram-1601162_640.png" alt="">
+                    </div>
+                </div>
+                <div class="lawlist">
+                    <div class="adv"><img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png" alt=""></div>
+                    <div class="lawyer-info">
+                        <strong><p>Mann Mittal</p></strong>
+                        <p class="small">Civil & property</p>
+                        <p class="small">mann123@gmail.com</p>
+                    </div>
+                    <div class="rating">
+                        <img src="https://cdn.pixabay.com/photo/2016/03/31/17/42/gradient-1293852_640.png" alt="">
+                        <img src="https://cdn.pixabay.com/photo/2016/03/31/17/42/gradient-1293852_640.png" alt="">
+                        <img src="https://cdn.pixabay.com/photo/2016/03/31/17/42/gradient-1293852_640.png" alt="">
+                        <img src="https://cdn.pixabay.com/photo/2016/03/31/17/42/gradient-1293852_640.png" alt="">
+                        <img src="https://cdn.pixabay.com/photo/2016/08/17/18/05/pentagram-1601162_640.png" alt="">
+                    </div>
+                </div>
+                <div class="lawlist">
+                    <div class="adv"><img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png" alt=""></div>
+                    <div class="lawyer-info">
+                        <strong><p>Suhani Asawara</p></strong>
+                        <p class="small">Criminal</p>
+                        <p class="small">suhani123@gmail.com</p>
+                    </div>
+                    <div class="rating">
+                        <img src="https://cdn.pixabay.com/photo/2016/03/31/17/42/gradient-1293852_640.png" alt="">
+                        <img src="https://cdn.pixabay.com/photo/2016/03/31/17/42/gradient-1293852_640.png" alt="">
+                        <img src="https://cdn.pixabay.com/photo/2016/03/31/17/42/gradient-1293852_640.png" alt="">
+                        <img src="https://cdn.pixabay.com/photo/2016/08/17/18/05/pentagram-1601162_640.png" alt="">
+                        <img src="https://cdn.pixabay.com/photo/2016/08/17/18/05/pentagram-1601162_640.png" alt="">
+                    </div>
+                </div>
+                <div class="lawlist">
+                    <div class="adv"><img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png" alt=""></div>
+                    <div class="lawyer-info">
+                        <strong><p>Hitanshi Lalwani</p></strong>
+                        <p class="small">Marital</p>
+                        <p class="small">hitanshi123@gmail.com</p>
+                    </div>
+                    <div class="rating">
+                        <img src="https://cdn.pixabay.com/photo/2016/03/31/17/42/gradient-1293852_640.png" alt="">
+                        <img src="https://cdn.pixabay.com/photo/2016/03/31/17/42/gradient-1293852_640.png" alt="">
+                        <img src="https://cdn.pixabay.com/photo/2016/03/31/17/42/gradient-1293852_640.png" alt="">
+                        <img src="https://cdn.pixabay.com/photo/2016/03/31/17/42/gradient-1293852_640.png" alt="">
+                        <img src="https://cdn.pixabay.com/photo/2016/08/17/18/05/pentagram-1601162_640.png" alt="">
+                    </div>
+                </div>
+                <div class="lawlist">
+                    <div class="adv"><img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png" alt=""></div>
+                    <div class="lawyer-info">
+                        <strong><p>Mann Mittal</p></strong>
+                        <p class="small">Civil & property</p>
+                        <p class="small">mann123@gmail.com</p>
+                    </div>
+                    <div class="rating">
+                        <img src="https://cdn.pixabay.com/photo/2016/03/31/17/42/gradient-1293852_640.png" alt="">
+                        <img src="https://cdn.pixabay.com/photo/2016/03/31/17/42/gradient-1293852_640.png" alt="">
+                        <img src="https://cdn.pixabay.com/photo/2016/03/31/17/42/gradient-1293852_640.png" alt="">
+                        <img src="https://cdn.pixabay.com/photo/2016/03/31/17/42/gradient-1293852_640.png" alt="">
+                        <img src="https://cdn.pixabay.com/photo/2016/08/17/18/05/pentagram-1601162_640.png" alt="">
+                    </div>
+                </div>
+                <div class="lawlist">
+                    <div class="adv"><img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png" alt=""></div>
+                    <div class="lawyer-info">
+                        <strong><p>Suhani Asawara</p></strong>
+                        <p class="small">Criminal</p>
+                        <p class="small">suhani123@gmail.com</p>
+                    </div>
+                    <div class="rating">
+                        <img src="https://cdn.pixabay.com/photo/2016/03/31/17/42/gradient-1293852_640.png" alt="">
+                        <img src="https://cdn.pixabay.com/photo/2016/03/31/17/42/gradient-1293852_640.png" alt="">
+                        <img src="https://cdn.pixabay.com/photo/2016/03/31/17/42/gradient-1293852_640.png" alt="">
+                        <img src="https://cdn.pixabay.com/photo/2016/08/17/18/05/pentagram-1601162_640.png" alt="">
+                        <img src="https://cdn.pixabay.com/photo/2016/08/17/18/05/pentagram-1601162_640.png" alt="">
+                    </div>
+                </div>
+                <div class="lawlist">
+                    <div class="adv"><img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png" alt=""></div>
+                    <div class="lawyer-info">
+                        <strong><p>Hitanshi Lalwani</p></strong>
+                        <p class="small">Marital</p>
+                        <p class="small">hitanshi123@gmail.com</p>
+                    </div>
+                    <div class="rating">
+                        <img src="https://cdn.pixabay.com/photo/2016/03/31/17/42/gradient-1293852_640.png" alt="">
+                        <img src="https://cdn.pixabay.com/photo/2016/03/31/17/42/gradient-1293852_640.png" alt="">
+                        <img src="https://cdn.pixabay.com/photo/2016/03/31/17/42/gradient-1293852_640.png" alt="">
+                        <img src="https://cdn.pixabay.com/photo/2016/03/31/17/42/gradient-1293852_640.png" alt="">
+                        <img src="https://cdn.pixabay.com/photo/2016/08/17/18/05/pentagram-1601162_640.png" alt="">
+                    </div>
+                </div>
+                <div class="lawlist">
+                    <div class="adv"><img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png" alt=""></div>
+                    <div class="lawyer-info">
+                        <strong><p>Mann Mittal</p></strong>
+                        <p class="small">Civil & property</p>
+                        <p class="small">mann123@gmail.com</p>
+                    </div>
+                    <div class="rating">
+                        <img src="https://cdn.pixabay.com/photo/2016/03/31/17/42/gradient-1293852_640.png" alt="">
+                        <img src="https://cdn.pixabay.com/photo/2016/03/31/17/42/gradient-1293852_640.png" alt="">
+                        <img src="https://cdn.pixabay.com/photo/2016/03/31/17/42/gradient-1293852_640.png" alt="">
+                        <img src="https://cdn.pixabay.com/photo/2016/03/31/17/42/gradient-1293852_640.png" alt="">
+                        <img src="https://cdn.pixabay.com/photo/2016/08/17/18/05/pentagram-1601162_640.png" alt="">
+                    </div>
+                </div>
+                <div class="lawlist">
+                    <div class="adv"><img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png" alt=""></div>
+                    <div class="lawyer-info">
+                        <strong><p>Suhani Asawara</p></strong>
+                        <p class="small">Criminal</p>
+                        <p class="small">suhani123@gmail.com</p>
+                    </div>
+                    <div class="rating">
+                        <img src="https://cdn.pixabay.com/photo/2016/03/31/17/42/gradient-1293852_640.png" alt="">
+                        <img src="https://cdn.pixabay.com/photo/2016/03/31/17/42/gradient-1293852_640.png" alt="">
+                        <img src="https://cdn.pixabay.com/photo/2016/03/31/17/42/gradient-1293852_640.png" alt="">
+                        <img src="https://cdn.pixabay.com/photo/2016/08/17/18/05/pentagram-1601162_640.png" alt="">
+                        <img src="https://cdn.pixabay.com/photo/2016/08/17/18/05/pentagram-1601162_640.png" alt="">
+                    </div>
+                </div>
+                <div class="lawlist">
+                    <div class="adv"><img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png" alt=""></div>
+                    <div class="lawyer-info">
+                        <strong><p>Hitanshi Lalwani</p></strong>
+                        <p class="small">Marital</p>
+                        <p class="small">hitanshi123@gmail.com</p>
+                    </div>
+                    <div class="rating">
+                        <img src="https://cdn.pixabay.com/photo/2016/03/31/17/42/gradient-1293852_640.png" alt="">
+                        <img src="https://cdn.pixabay.com/photo/2016/03/31/17/42/gradient-1293852_640.png" alt="">
+                        <img src="https://cdn.pixabay.com/photo/2016/03/31/17/42/gradient-1293852_640.png" alt="">
+                        <img src="https://cdn.pixabay.com/photo/2016/03/31/17/42/gradient-1293852_640.png" alt="">
+                        <img src="https://cdn.pixabay.com/photo/2016/08/17/18/05/pentagram-1601162_640.png" alt="">
+                    </div>
+                </div>
+            </div>
             </div>
        </div>
      </section>
@@ -95,19 +330,35 @@
       var btn11 = document.querySelector('.btn11');
       var btn22 = document.querySelector('.btn22');
       var btn33 = document.querySelector('.btn33');
+      var btn44 = document.querySelector('.btn44');
       var box11 = document.querySelector('.box11');
       var box22 = document.querySelector('.box22');
       var box33 = document.querySelector('.box33');
+      var box44 = document.querySelector('.box44');
      
+      btn11.addEventListener('click', function () {
+        box11.classList.add('show');
+        box22.classList.remove('show');
+        box33.classList.remove('show');
+        box44.classList.remove('show');
+      });
       btn22.addEventListener('click', function () {
         box22.classList.add('show');
-        // box11.classList.remove('show');
+        box11.classList.remove('show');
         box33.classList.remove('show');
+        box44.classList.remove('show');
       });
       btn33.addEventListener('click', function () {
         box33.classList.add('show');
-        // box11.classList.remove('show');
+        box11.classList.remove('show');
         box22.classList.remove('show');
+        box44.classList.remove('show');
+      });
+      btn44.addEventListener('click', function () {
+        box44.classList.add('show');
+        box11.classList.remove('show');
+        box22.classList.remove('show');
+        box33.classList.remove('show');
       });
       
       
@@ -123,6 +374,25 @@
       </script>
 
       
-
+<script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+<script>
+  window.botpressWebChat.init({
+      "composerPlaceholder": "E-Court assistant",
+      "botConversationDescription": "Chat with E-court Assistant",
+      "botId": "b80ca6bc-c761-4956-9270-07a0301dd470",
+      "hostUrl": "https://cdn.botpress.cloud/webchat/v1",
+      "messagingUrl": "https://messaging.botpress.cloud",
+      "clientId": "b80ca6bc-c761-4956-9270-07a0301dd470",
+      "webhookId": "65898120-11f3-4cdb-9ff0-eba428b1c4b2",
+      "lazySocket": true,
+      "themeName": "prism",
+      "botName": "E-portal assistant",
+      "stylesheet": "https://webchat-styler-css.botpress.app/prod/a212a593-afcf-4b76-8f7d-c0287e0c121c/v82028/style.css",
+      "frontendVersion": "v1",
+      "useSessionStorage": true,
+      "theme": "prism",
+      "themeColor": "#2563eb"
+  });
+</script>
 
 </html>

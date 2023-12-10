@@ -10,6 +10,22 @@ module.exports.logging = (req,res)=>{
     const filePath = path.join(__dirname, 'client', 'login_client.html'); // Path to your index.html file
     res.sendFile(filePath);
 }
+module.exports.meeting = (req,res)=>{
+  const filePath = path.join(__dirname, 'Video Conference', 'room.html'); // Path to your index.html file
+  res.sendFile(filePath);
+}
+module.exports.lobby = (req,res)=>{
+  const filePath = path.join(__dirname, 'Video Conference', 'lobby.html'); // Path to your index.html file
+  res.sendFile(filePath);
+}
+module.exports.email = (req,res)=>{
+  const filePath = path.join(__dirname,'client','forget_password.html');
+  res.sendFile(filePath)
+}
+module.exports.new_password = (req,res)=>{
+  const filePath = path.join(__dirname,'client','new_password.html');
+  res.sendFile(filePath)
+}
 
 module.exports.client_register = (req,res)=>{
     const dataToSave = {
@@ -64,7 +80,8 @@ module.exports.client_login = (req,res)=>{
     }) 
 }
 module.exports.face = (req,res)=>{
-  const pythonScript = '/E-portal/E-portal/FaceId/face_client.py';
+  // const pythonScript = '/E-Court/E-portal/FaceId/face_client.py';
+  const pythonScript = path.join(__dirname, 'FaceId', 'face_client.py');
   exec(`python ${pythonScript}`, (err, stdout, stderr) => {
     if (err) {
       console.error(`Error executing Python script: ${err}`);
@@ -79,4 +96,17 @@ module.exports.face = (req,res)=>{
 module.exports.Dashboard_client = (req,res)=>{
   res.render('../controllers/client/dashboard_client');
   return
+}
+module.exports.verify_img = (req,res)=>{
+  // const pythonScript = '/E-Court/E-portal/FaceId/verify_client.py';
+  const pythonScript = path.join(__dirname, 'FaceId', 'verify_client.py'); // Path to your index.html file
+  exec(`python ${pythonScript}`, (err, stdout, stderr) => {
+    if (err) {
+      console.error(`Error executing Python script: ${err}`);
+      res.status(500).send('Error executing Python script');
+      return;
+    }
+    console.log(`Python script output: ${stdout}`);
+    return res.redirect('/client/meeting')
+  });
 }
