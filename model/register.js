@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 const register_schema = new mongoose.Schema({
     name:{
         type:String,
-        required:true
+		required:true
+        
     },
     dob:{
         type:Date,

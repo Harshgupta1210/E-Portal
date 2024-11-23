@@ -53,50 +53,58 @@ module.exports.numbers = (req,res)=>{
     bar_association_no:req.body.bar_association_no
 }
 Lawyer.create(dataToSave)
-return res.redirect('back');
+    .then(() => {
+      res.redirect('back'); // Redirecting after successful insertion
+    })
+    .catch(error => {
+      console.error(error);
+      res.status(500).json({ message: 'Error saving lawyer data', error: error.message });
+    });
 }
 
 module.exports.lawyer_register = async (req, res) => {
-  const dataToSave = {
-                    name:req.body.name,
-                    dob:req.body.dob,
-                    email:req.body.email,
-                    phone:req.body.phone,
-                    gender:req.body.gender,
-                    state:req.body.state,
-                    bar_association_no:req.body.bar_association_no,
-                    password:req.body.password,
-                    confirm_password:req.body.confirm_password
-                  }
-  const {email,bar_association_no} = req.body;
-
-  try {
-    // Check if the user is already registered as a lawyer
-    const existingLawyer = await Register.findOne({ email }).exec();
-    const existingbarNo = await Lawyer.findOne({ bar_association_no }).exec();
-    const lower = req.body.name.toLowerCase()
-    console.log(lower)
-    console.log(existingbarNo.name)
-    console.log(req.body.name)
-    console.log(existingbarNo.bar_association_no)
-    if (!existingLawyer && existingbarNo.bar_association_no===req.body.bar_association_no && existingbarNo.name===lower) {
-      Register.create(dataToSave)
-      return res.redirect('/lawyer/face');
-    } 
-    if(existingbarNo.bar_association_no!==req.body.bar_association_no || existingbarNo.name!==lower){
-      //   // Bar_no does not exist, show bar no not registered message
-      console.log("no not register or register name is not correct")
-      return res.redirect('/lawyer/register')
-    }
-    else {
-      // User is already registered as a lawyer
-      console.log("already")
-      return res.redirect('/lawyer/register')
-    }
-  } catch (error) {
-    return res.status(500).json({ message: 'Internal server error', error: error.message });
-  }
-};
+	const { email, bar_association_no, name } = req.body;
+  
+	try {
+	  // Log the received bar_association_no
+	  console.log("Received Bar Association No:", bar_association_no);
+  
+	  // Check if the user is already registered as a lawyer
+	  const existingLawyer = await Register.findOne({ email }).exec();
+	  const existingBarNo = await Lawyer.findOne({ bar_association_no }).exec();
+  
+	  console.log("Existing Bar No:", existingBarNo);
+  
+	  // If no matching bar_association_no is found, return an error
+	  if (!existingBarNo) {
+		return res.status(400).json({ message: 'Bar association number not found' });
+	  }
+  
+	  // Compare the names and bar_association_no
+	  const lowerName = name.toLowerCase();
+	  if (existingBarNo.bar_association_no === bar_association_no && existingBarNo.name.toLowerCase() === lowerName) {
+		const dataToSave = {
+		  name: req.body.name,
+		  dob: req.body.dob,
+		  email: req.body.email,
+		  phone: req.body.phone,
+		  gender: req.body.gender,
+		  state: req.body.state,
+		  bar_association_no: req.body.bar_association_no,
+		  password: req.body.password,
+		  confirm_password: req.body.confirm_password
+		};
+		await Register.create(dataToSave);
+		return res.redirect('/lawyer/face');
+	  } else {
+		return res.status(400).json({ message: 'Bar association number or name does not match' });
+	  }
+  
+	} catch (error) {
+	  return res.status(500).json({ message: 'Internal server error', error: error.message });
+	}
+  };
+  
 
 
 module.exports.lawyer_login =(req,res)=>{
